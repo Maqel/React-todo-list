@@ -1,0 +1,17 @@
+@import '../../styles/settings.scss';
+
+.cardForm {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+    @media (max-width: 767px) {
+        display:block;
+        input, button, label {
+            display: flex;
+            margin: $base-size auto;
+            max-width: 100%;
+            justify-content: center;
+        }
+    }
+}
