@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux';
 const List = () => {
   const columns = useSelector(state => state.columns);
 
-  
-
 	return (
     <div className={styles.list}>
       <header className={styles.header}>
