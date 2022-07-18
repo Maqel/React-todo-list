@@ -5,8 +5,10 @@ const reducer = (state, payload) => {
   switch(payload.type) {
     case 'ADD_COLUMN' :
       return {...state, columns: [...state.columns, {...payload.newColumn }]}
-      case 'ADD_CARD' :
+    case 'ADD_CARD' :
       return {...state, cards: [...state.cards, {...payload.newCard}]}
+    case 'UPDATE_SEARCHSTRING':
+      return {...state, searchString: payload.newSearch}
     default: 
       return state;
 }};
