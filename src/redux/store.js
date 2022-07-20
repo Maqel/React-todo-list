@@ -10,16 +10,19 @@ export const getAllColumns = state =>{
     return state.columns
 };
 
+// action creators
+export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+
 
 
 const reducer = (state, payload) => {
-  switch(payload.type) {
-    case 'ADD_COLUMN' :
-      return {...state, columns: [...state.columns, {...payload.newColumn }]}
-    case 'ADD_CARD' :
-      return {...state, cards: [...state.cards, {...payload.newCard}]}
-    case 'UPDATE_SEARCHSTRING':
-      return {...state, searchString: payload.newSearch}
+  switch (payload.type) {
+    case 'ADD_COLUMN':
+      return { ...state, columns: [...state.columns, { ...payload.newColumn }] };
+    case 'ADD_CARD':
+      return { ...state, cards: [...state.cards, { ...payload.newCard }] };
+    case 'UPDATE_SEARCHSTRING': 
+    return { ...state, searchString: payload.newSearch };
     default: 
       return state;
 }};
