@@ -7,12 +7,13 @@ import { updateSearching } from '../../redux/store';
 const SearchForm = () => {
     const [newSearchString, setSearchString] = useState('');
     const dispatch = useDispatch();
-    console.log(newSearchString);
+    console.log('newSearchString: ', newSearchString);
 
     const handleSubmit = (e) =>{
         e.preventDefault();
         // dispatch({ type: 'UPDATE_SEARCHSTRING', newSearch: newSearchString});
-        dispatch(updateSearching({newSearch: newSearchString}));
+        // dispatch(updateSearching({newSearch: newSearchString}));
+        dispatch(updateSearching(newSearchString));
         setSearchString('');
     }
 

@@ -10,12 +10,24 @@ export const getAllColumns = state =>{
     return state.columns
 };
 
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
+export const getColumnsById = ({columns}, listId) => {
+  
+  return ( columns.filter(column=>column.listId===listId)
+  )
+};
+
+export const getAllLists = (state) =>{
+  return state.lists};
+
 export const addColumn = newColumn => ({ type: 'ADD_COLUMN', newColumn });
 export const addCard = newCard => ({ type: 'ADD_CARD', newCard });
-export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHING', newSearch})
+export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHSTRING', newSearch})
 
 
 const reducer = (state, payload) => {
+  console.log('what is payload',payload);
+
   switch (payload.type) {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { ...payload.newColumn }] };
