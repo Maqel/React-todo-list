@@ -3,15 +3,16 @@ import Column from './../Column/Column';
 import ColumnForm from './../ColumnForm/ColumnForm';
 import { useSelector } from 'react-redux';
 import { getColumnsById, getListById } from '../../redux/store';
+import { useParams } from 'react-router';
+import SearchForm from "../SearchForm/SearchForm";
 
 
 
 const List = () => {
-  //const columns = useSelector(state => state.columns);
-  const listData = useSelector(state => getListById(state, 1));
-    const columns = useSelector(state => getColumnsById(state, listData.id));
-    console.log(listData);
-    console.log(columns);
+    const { listId } = useParams();
+    const listData = useSelector(state => getListById(state, listId));
+    const columns = useSelector(state => getColumnsById(state, listId));
+    
 
 	return (
     <div className={styles.list}>
@@ -19,10 +20,11 @@ const List = () => {
       <h2 className={styles.title}>{listData.title}<span className={styles.span}>soon!</span></h2>
       </header>
       <p className={styles.description}>{listData.description}</p>
+      <SearchForm />
       <section className={styles.columns}>
         {columns.map(column => <Column key={column.id} {...column}  /> )}
       </section>
-      <ColumnForm />
+      <ColumnForm listId={listId} />
     </div>
   );
 };
