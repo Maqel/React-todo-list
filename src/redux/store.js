@@ -11,9 +11,8 @@ export const getAllColumns = state =>{
 };
 
 export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
-export const getColumnsById = ({columns}, listId) => {
-  
-  return ( columns.filter(column=>column.listId===listId)
+export const getColumnsById = ({ columns }, listId) => {
+  return (columns.filter(column => column.listId === listId)
   )
 };
 
@@ -22,11 +21,12 @@ export const getAllLists = (state) =>{
 
 export const addColumn = newColumn => ({ type: 'ADD_COLUMN', newColumn });
 export const addCard = newCard => ({ type: 'ADD_CARD', newCard });
-export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHSTRING', newSearch})
+export const updateSearching = newSearch => ({ type: 'UPDATE_SEARCHSTRING', newSearch })
+export const addList = newList => ({ type: 'ADD_LIST', newList });
 
 
 const reducer = (state, payload) => {
-  console.log('what is payload',payload);
+  console.log('what is payload', payload);
 
   switch (payload.type) {
     case 'ADD_COLUMN':
@@ -34,7 +34,9 @@ const reducer = (state, payload) => {
     case 'ADD_CARD':
       return { ...state, cards: [...state.cards, { ...payload.newCard }] };
     case 'UPDATE_SEARCHSTRING': 
-    return { ...state, searchString: payload.newSearch };
+      return { ...state, searchString: payload.newSearch };
+    case 'ADD_LIST':
+      return { ...state, lists: [...state.lists, { ...payload.newList }] };
     default: 
       return state;
 }};
