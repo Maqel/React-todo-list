@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 
 const IsFavoriteButton = (props) => {
-        console.log(props);
+        console.log(props.isFavorite)
 
         return (
                 <button className={styles.isFavoriteButton}>
