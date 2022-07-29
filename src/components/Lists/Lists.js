@@ -7,12 +7,12 @@ import ListForm from "../ListForm/ListForm";
 
 
 const Lists = () => {
+  
   const { listId } = useParams();
-  console.log('listId: ', listId);
+
 
   const lists = useSelector(getAllLists);
   
-
   return (
     <section className={styles.lists}>
       <h2 className={styles.heading}>Browse lists</h2>

@@ -4,5 +4,8 @@
     padding: ($base-size * 3) 0;
     text-align: center;
     font-size: ($base-size * 3);
-    text-transform: uppercase;
+    //text-transform: uppercase;
+    span {
+      color: #32CD32
+    }
   } 

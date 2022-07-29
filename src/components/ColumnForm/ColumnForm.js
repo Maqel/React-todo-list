@@ -8,12 +8,13 @@ import { addColumn } from '../../redux/columnsReducer';
 
 
 const ColumnForm = props => {
+
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
     const dispatch = useDispatch();
     const handleSubmit = e => {
+
       e.preventDefault();
-      // dispatch({ type: 'ADD_COLUMN', newColumn: { title, icon ,id: shortid() }});
       dispatch(addColumn({ title, icon ,id: shortid(), listId: props.listId }));
       setTitle('');
       setIcon('');

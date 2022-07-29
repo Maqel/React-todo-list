@@ -18,9 +18,13 @@
 
 .text {
     color:#ffff;
-    font-size: 12px;
+    font-size: 16px;
     margin: 12px 50px;
     text-align: center;
+
+    span {
+        color:#32CD32
+    }
 }
 
 .card {

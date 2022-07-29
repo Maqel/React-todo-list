@@ -1,22 +1,14 @@
 import styles from './Card.module.scss';
 import IsFavoriteButton from '../IsFavoriteButton/IsFavoriteButton';
-import { useDispatch } from 'react-redux';
-import { toggleFavorite } from '../../redux/cardsReducer';
+import RemoveButton from '../RemoveButton/RemoveButton';
 
 const Card = props => {
-    const dispatch = useDispatch();
-    const handleClick = e => {
-        e.preventDefault();
-        const favoriteCard = props.id
-        dispatch(toggleFavorite(favoriteCard));
-    }
-
+    
     return (
-        <>
-            <li className={styles.card} onClick={handleClick}>{props.title} 
-            <IsFavoriteButton isFavorite={props.isFavorite}/>
+        <li className={styles.card} >{props.title}
+                <IsFavoriteButton isFavorite={props.isFavorite} id={props.cardId} />
+                <RemoveButton keyId={props.cardId} />
             </li>
-        </>
         
     );
 };

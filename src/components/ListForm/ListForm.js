@@ -6,11 +6,13 @@ import shortid from 'shortid';
 import { addList } from '../../redux/listsReducer';
 
 const ListForm = props => {
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const dispatch = useDispatch();
 
     const handleSubmit = e => {
+        
         e.preventDefault();
         dispatch(addList({ title, description ,id: shortid()}));
         setTitle('');

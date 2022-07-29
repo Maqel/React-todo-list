@@ -7,11 +7,12 @@ import shortid from 'shortid';
 import { addCard } from '../../redux/cardsReducer';
 
 const CardForm = props => {
+
     const [title, setTitle] = useState('');
     const dispatch = useDispatch();
     const handleSubmit = e => {
+
         e.preventDefault();
-        //dispatch({ type: 'ADD_CARD', newCard: {title: title, columnId: props.columnId, id: shortid() }})
         dispatch(addCard({title: title, columnId: props.columnId, id: shortid() }));
         setTitle('');
     };
