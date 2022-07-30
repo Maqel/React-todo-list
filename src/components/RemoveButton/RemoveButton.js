@@ -7,6 +7,7 @@ const RemoveButton = (props) => {
     const dispatch = useDispatch();
     const handleClick = e => {
         e.preventDefault()
+        
         const cardToRemove = props.keyId;
         dispatch(removeCard(cardToRemove));
 }

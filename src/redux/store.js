@@ -6,6 +6,7 @@ import cardsReducer from './cardsReducer';
 import searchStringReducer from './searchStringReducer';
 
 const subreducers = {
+  
   lists: listsReducer,
   columns: columnsReducer,
   cards: cardsReducer,

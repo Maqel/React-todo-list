@@ -7,6 +7,7 @@ export const updateSearching = newSearch => ({ type: UPDATE_SEARCHSTRING, newSea
 
 const searchStringReducer = (statePart = '', action) => {
     switch (action.type) {
+      
       case UPDATE_SEARCHSTRING:
         return action.newSearch
       default:

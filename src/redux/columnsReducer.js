@@ -18,7 +18,9 @@ export const getColumnsById = ({ columns }, listId) => {
 export const addColumn = newColumn => ({ type: ADD_COLUMN, newColumn });
 
 const columnsReducer = (statePart = [], action) => {
+
     switch (action.type) {
+      
       case ADD_COLUMN:
         return [...statePart, { ...action.newColumn, id: shortid() }]
       default:
